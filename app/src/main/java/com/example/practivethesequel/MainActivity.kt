@@ -3,6 +3,7 @@ package com.example.practivethesequel
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -26,10 +27,11 @@ class MainActivity : ComponentActivity() {
             PractiveTheSequelTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
+                    modifier = Modifier
+                        .fillMaxSize(),
                     color = MaterialTheme.colorScheme.onBackground
                 ) {
-                    Greeting("Android")
+                    WakeUp("Android")
                 }
             }
         }
@@ -39,20 +41,36 @@ class MainActivity : ComponentActivity() {
 var testingVar: Int = 0
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-        Surface(color = Color.Red) {
+fun WakeUp(name: String, modifier: Modifier = Modifier) {
+        Surface(color = Color.Transparent) {
             Text(
                 text = "Wakey wakey $name! Wakey Wakey! Wakey Wakey! Wakey Wakey!",
-                modifier = modifier.size(width = 412.dp, height = 892.dp).offset(x = 0.dp, y = 50.dp)
+                modifier = modifier
+                    .size(width = 412.dp, height = 892.dp)
+                    .offset(x = 0.dp, y = 21.dp)
+                    .background(Color.Red)
             )
         }
+}
+
+@Composable
+fun Greet(name: String, modifier: Modifier = Modifier) {
+    Surface(color = Color.Green) {
+        Text(
+            text = "Welcome Welcome Welcome $name",
+            modifier = modifier
+                .size(width = 412.dp, height = 20.dp)
+                .offset(x = 50.dp, y = 0.dp)
+                .background(Color.Transparent)
+        )
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     PractiveTheSequelTheme {
-        Greeting("Android")
-
+        WakeUp("Android")
+        Greet(name = "Android")
     }
 }
