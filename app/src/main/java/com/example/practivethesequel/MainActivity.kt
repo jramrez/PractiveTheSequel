@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
             PractiveTheSequelTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxHeight(),
+                    modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.onBackground
                 ) {
                     Greeting("Android")
@@ -37,19 +37,15 @@ class MainActivity : ComponentActivity() {
 }
 
 var testingVar: Int = 0
-var testArr = arrayOf(Color.Red, Color.Green, Color.Blue)
-var i = 0
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Surface(color = Color.Red) {
-        Text(
-            text = "Wakey wakey $name! Wakey Wakey! Wakey Wakey! Wakey Wakey!",
-            modifier = modifier.size(width = 500.dp, height = 600.dp).padding(horizontal = 2.dp, vertical = 2.dp).offset(y = testingVar.dp)
-        )
-    }
-    testingVar += 50
-    i++
+        Surface(color = Color.Red) {
+            Text(
+                text = "Wakey wakey $name! Wakey Wakey! Wakey Wakey! Wakey Wakey!",
+                modifier = modifier.size(width = 412.dp, height = 892.dp).offset(x = 0.dp, y = 50.dp)
+            )
+        }
 }
 
 @Preview(showBackground = true)
